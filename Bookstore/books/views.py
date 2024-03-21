@@ -51,7 +51,8 @@ class BookListAPIView(APIView):
             if not queryset.exists():
                 return Response({'message': 'No books found.'}, status=status.HTTP_204_NO_CONTENT)
 
-            
+            #sort query by download_count
+            queryset = queryset.order_by('-download_count')
             #pagination
             paginator = self.pagination_class()
             paginated_queryset = paginator.paginate_queryset(queryset, request)
