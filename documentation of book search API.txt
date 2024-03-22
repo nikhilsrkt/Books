@@ -1,0 +1,78 @@
+seach books API
+
+Objective : - This API is used to fetch details of books 
+
+API Details : - 
+	URL - {BASE_URL}/search/books?title=The Mayflower Compac
+	METHOD - GET
+	AUTHERIZATION - NOT USED
+
+	PAYLOAD :
+	Query Params :- book_id
+			language
+			limit - if not provide , default 20
+			mime_type
+			topic
+			title
+
+	Response :
+		[
+    			{
+					"title": "The Mayflower Compact",
+					"gutenberg_id": 7,
+					"authors": [],
+					"languages": [
+						{
+							"code": "en"
+						}
+					],
+					"subjects": [
+						{
+							"name": "Massachusetts -- History -- New Plymouth, 1620-1691 -- Sources"
+						},
+						{
+							"name": "Mayflower Compact (1620)"
+						},
+						{
+							"name": "Pilgrims (New Plymouth Colony)"
+						}
+					],
+					"bookshelves": [],
+					"download_count": 25,
+					"media_type": "Text",
+					"formats": [
+						{
+							"mime_type": "application/epub+zip",
+							"url": "http://www.gutenberg.org/ebooks/7.epub.noimages"
+						},
+						{
+							"mime_type": "application/zip",
+							"url": "http://www.gutenberg.org/files/7/7-h.zip"
+						},
+						{
+							"mime_type": "application/rdf+xml",
+							"url": "http://www.gutenberg.org/ebooks/7.rdf"
+						},
+						{
+							"mime_type": "text/plain; charset=us-ascii",
+							"url": "http://www.gutenberg.org/files/7/7.txt"
+						},
+						{
+							"mime_type": "application/x-mobipocket-ebook",
+							"url": "http://www.gutenberg.org/ebooks/7.kindle.noimages"
+						},
+						{
+							"mime_type": "text/html",
+							"url": "http://www.gutenberg.org/files/7/7-h/7-h.htm"
+						},
+						{
+							"mime_type": "text/plain",
+							"url": "http://www.gutenberg.org/ebooks/7.txt.utf-8"
+						}
+					]
+				}
+			]	
+
+	curl : curl --location 'http://127.0.0.1:8000/search/books?title=The%20Mayflower%20Compact'	
+
+
